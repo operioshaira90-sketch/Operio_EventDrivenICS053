@@ -1,0 +1,823 @@
+
+/* =========================================
+   INKORA STORIES — DESKTOP CSS
+   Theme: Sage Green, Dusty Rose, and Cream
+   ========================================= */
+
+
+/* 1. COLORS AND FONTS
+   Change these values to update the website theme. */
+:root {
+    --primary: #8BA7A7;
+    --primary-dark: #6B8A8A;
+    --primary-light: #B8CECE;
+
+    --secondary: #D4A5A5;
+    --secondary-dark: #B88A8A;
+    --secondary-light: #E8CECE;
+
+    --accent: #E8D5B7;
+    --background: #FDFBF7;
+    --background-alt: #F5F0E8;
+    --text: #3D3D3D;
+    --text-light: #6B6B6B;
+    --white: #FFFFFF;
+
+    --heading-font: Georgia, "Times New Roman", serif;
+    --body-font: "Segoe UI", Arial, sans-serif;
+}
+
+
+/* 2. GENERAL PAGE SETTINGS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--body-font);
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text);
+    background-color: var(--background);
+    min-height: 100vh;
+    text-align: center;
+}
+
+img {
+    max-width: 100%;
+}
+
+h2 {
+    font-family: var(--heading-font);
+    font-size: 2rem;
+    color: var(--primary-dark);
+    margin-bottom: 16px;
+}
+
+h3 {
+    font-family: var(--heading-font);
+    margin-bottom: 8px;
+}
+
+p {
+    color: var(--text-light);
+    margin-bottom: 16px;
+}
+
+a {
+    color: var(--primary-dark);
+    text-decoration: none;
+}
+
+
+/* 3. HEADER AND NAVIGATION */
+
+/* Top brand banner */
+.header {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    padding: 64px 32px;
+    color: var(--white);
+    text-align: center;
+}
+
+.header h1 {
+    font-family: var(--heading-font);
+    font-size: 3rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--white);
+}
+
+.header h1::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: var(--accent);
+    margin: 16px auto;
+}
+
+.header p {
+    color: var(--white);
+}
+
+/* Navigation menu */
+#nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    padding: 0 32px;
+    background: var(--white);
+    box-shadow: 0 2px 8px #00000014;
+    border-bottom: 2px solid var(--primary-light);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+#nav a {
+    padding: 16px 24px;
+    color: var(--text);
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+#nav a:hover {
+    color: var(--primary-dark);
+    background: var(--background-alt);
+}
+
+
+/* 4. MAIN CONTENT AND BUTTONS */
+
+/* Center the page and limit its width */
+.main {
+    max-width: 1200px;
+    width: 100%;
+    margin: auto;
+    padding: 40px 32px;
+}
+
+/* Reusable buttons */
+.btn,
+.hero-button {
+    display: inline-block;
+    padding: 12px 24px;
+    margin-top: 10px;
+    background: var(--primary);
+    color: var(--white);
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover,
+.hero-button:hover {
+    background: var(--primary-dark);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: var(--secondary);
+    color: var(--white);
+}
+
+.btn-secondary:hover {
+    background: var(--secondary-dark);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--primary-dark);
+    border: 2px solid var(--primary);
+}
+
+.btn-outline:hover {
+    background: var(--primary);
+    color: var(--white);
+}
+
+
+/* 5. HOMEPAGE */
+
+/* Main introduction banner */
+.hero {
+    background: linear-gradient(135deg, var(--background-alt), var(--accent));
+    padding: 64px 32px;
+    margin-bottom: 64px;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+}
+
+.hero p {
+    max-width: 60ch;
+    margin: 0 auto 32px;
+}
+
+.promo-label,
+.offer-tag {
+    display: inline-block;
+    padding: 7px 16px;
+    margin-bottom: 16px;
+    background: var(--secondary);
+    color: var(--white);
+    border-radius: 30px;
+    font-size: 0.8rem;
+}
+
+/* Homepage banner image */
+.hero-image {
+    margin-top: 30px;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 700px;
+    max-height: 350px;
+    object-fit: cover;
+    border-radius: 16px;
+}
+
+/* General homepage sections */
+.section,
+.offer-section {
+    padding: 40px 25px;
+    margin-bottom: 35px;
+    border-radius: 16px;
+}
+
+.section {
+    background: var(--white);
+}
+
+.offer-section {
+    background: var(--background-alt);
+}
+
+.eyebrow {
+    color: var(--secondary-dark);
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+/* Featured books, offers, and reviews */
+.featured-books,
+.offer-grid,
+.review-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+    margin: 30px 0;
+}
+
+.featured-book,
+.offer-card,
+.review-card {
+    padding: 24px;
+    background: var(--white);
+    border: 1px solid var(--background-alt);
+    border-radius: 16px;
+    box-shadow: 0 2px 8px #00000014;
+    transition: 0.3s;
+}
+
+.featured-book:hover,
+.offer-card:hover,
+.review-card:hover {
+    transform: translateY(-4px);
+}
+
+/* Featured book covers */
+.featured-book img {
+    width: 190px;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.featured-book {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.featured-book .book-category {
+    font-size: 0.8rem;
+    color: var(--text-light);
+}
+
+.featured-book .book-price {
+    margin-top: auto;
+    color: var(--secondary-dark);
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Offer headings and review details */
+.offer-card h3,
+.review-card h4 {
+    color: var(--primary-dark);
+}
+
+.offer-note,
+.review-type {
+    font-size: 0.8rem;
+}
+
+.stars {
+    color: #C18A2C;
+    letter-spacing: 3px;
+}
+
+.review-text {
+    font-style: italic;
+}
+
+
+/* 6. PRODUCTS PAGE */
+
+/* Arrange books in a grid */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 32px;
+    margin-top: 32px;
+}
+
+/* Individual book card */
+.product-card {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: var(--white);
+    border-radius: 16px;
+    box-shadow: 0 2px 8px #00000014;
+    transition: 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px #00000020;
+}
+
+/* Book image area */
+.product-card .product-image {
+    height: 280px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--background-alt), var(--accent));
+    border-bottom: 3px solid var(--primary-light);
+}
+
+/* Book information */
+.product-card .product-info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 16px 24px 24px;
+}
+
+.product-card .product-info h3 {
+    font-size: 1.1rem;
+}
+
+.product-card .product-info .price {
+    margin-top: auto;
+    color: var(--secondary-dark);
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+/* Products page heading banner */
+.product-page-header {
+    padding: 32px;
+    margin-bottom: 32px;
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    border-radius: 16px;
+}
+
+.product-page-header h2,
+.product-page-header p {
+    color: var(--white);
+}
+
+.product-page-header p {
+    margin-bottom: 0;
+}
+
+
+/* 7. ABOUT PAGE */
+
+/* General About page sections */
+.about-intro,
+.creator,
+.inspiration,
+.purpose,
+.direction,
+.location {
+    width: 100%;
+    margin: 0 auto 35px;
+    text-align: center;
+}
+
+/* Keep paragraphs easy to read */
+.about-intro p,
+.creator p,
+.inspiration p,
+.purpose p,
+.direction p,
+.location p {
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Two-column About section */
+.about-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+    margin-bottom: 64px;
+}
+
+/* About image area */
+.about-section .about-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+    background: linear-gradient(135deg, var(--primary-light), var(--primary));
+    border-radius: 16px;
+    color: var(--white);
+}
+
+/* About text alignment */
+.about-section .about-text h2,
+.about-section .about-text p {
+    text-align: left;
+}
+
+/* Creator profile photo */
+.creator-photo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.creator-photo img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid var(--primary-light);
+}
+
+/* Embedded Google Map */
+.map {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.map iframe {
+    width: 100%;
+    height: 450px;
+    border: 0;
+    border-radius: 8px;
+}
+
+
+/* Center headings and footer text in About sections */
+.about-intro h1,
+.creator h2,
+.creator h3,
+.inspiration h2,
+.purpose h2,
+.direction h2,
+.location h2,
+.about-intro footer,
+.creator footer,
+.inspiration footer,
+.purpose footer,
+.direction footer,
+.location footer {
+    text-align: center;
+}
+
+/* Make all text inside About page footers centered */
+.about-intro footer,
+.creator footer,
+.inspiration footer,
+.purpose footer,
+.direction footer,
+.location footer {
+    display: block;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center !important;
+}
+
+/* Center the main website footer */
+.footer {
+    margin-top: 64px;
+    padding: 32px;
+    background: var(--primary-dark);
+    color: var(--white);
+    text-align: center;
+}
+
+.footer p {
+    color: var(--white);
+    text-align: center;
+}
+
+
+
+/* 8. FOOTER AND HELPER CLASSES */
+
+/* Bottom website footer */
+.footer {
+    margin-top: 64px;
+    padding: 32px;
+    background: var(--primary-dark);
+    color: var(--white);
+}
+
+.footer p {
+    color: var(--white);
+}
+
+/* Reusable text alignment */
+.text-center,
+.tip {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+/* Reusable spacing */
+.mt-sm {
+    margin-top: 8px;
+}
+
+.mt-md {
+    margin-top: 16px;
+}
+
+.mt-lg {
+    margin-top: 32px;
+}
+
+.mb-sm {
+    margin-bottom: 8px;
+}
+
+.mb-md {
+    margin-bottom: 16px;
+}
+
+.mb-lg {
+    margin-bottom: 32px;
+}
+
+/* =========================================
+   9. RESPONSIVE DESIGN — TABLETS AND PHONES
+   These rules adjust the website for smaller screens.
+   ========================================= */
+
+
+/* TABLETS: Screens 768px wide or smaller */
+@media screen and (max-width: 768px) {
+
+    /* Header and website title */
+    .header {
+        padding: 40px 20px;
+    }
+
+    .header h1 {
+        font-size: 2.2rem;
+        letter-spacing: 0.08em;
+        overflow-wrap: anywhere;
+    }
+
+    /* Navigation menu */
+    #nav {
+        flex-wrap: wrap;
+        gap: 0;
+        padding: 5px;
+    }
+
+    #nav a {
+        padding: 12px 14px;
+        font-size: 0.9rem;
+    }
+
+    /* Main content spacing */
+    .main {
+        padding: 25px 18px;
+    }
+
+    /* Homepage banner */
+    .hero {
+        padding: 40px 20px;
+        margin-bottom: 35px;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    /* Homepage cards: two columns */
+    .featured-books,
+    .offer-grid,
+    .review-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+    }
+
+    /* Products: two columns */
+    .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    .product-card .product-image {
+        height: 240px;
+    }
+
+    .product-card .product-info {
+        padding: 16px;
+    }
+
+    /* About page: one column */
+    .about-section {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        margin-bottom: 40px;
+    }
+
+    .about-section .about-text h2,
+    .about-section .about-text p {
+        text-align: center;
+    }
+
+    /* Sections and footer */
+    .section,
+    .offer-section {
+        padding: 28px 18px;
+    }
+
+    /* Embedded map */
+    .map iframe {
+        height: 350px;
+    }
+    .footer {
+    margin-top: 64px;
+    padding: 32px;
+    background: var(--primary-dark);
+    color: var(--white);
+    text-align: center;
+}
+
+.footer p {
+    color: var(--white);
+    text-align: center;
+    align-items: center;
+    }
+    *footer{
+        align-items: center;
+        display: flex;
+        justify-content: center; /* Center horizontally */
+    }
+}
+
+
+/* MOBILE PHONES: Screens 480px wide or smaller */
+@media screen and (max-width: 480px) {
+
+    /* Smaller text and spacing */
+    body {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    .header {
+        padding: 30px 14px;
+    }
+
+    .header h1 {
+        font-size: 1.65rem;
+        letter-spacing: 0.04em;
+    }
+
+    .header p {
+        font-size: 0.9rem;
+    }
+
+    /* Navigation fits small screens */
+    #nav {
+        gap: 2px;
+        padding: 5px 3px;
+    }
+
+    #nav a {
+        padding: 10px 9px;
+        font-size: 0.75rem;
+    }
+
+    /* Page content */
+    .main {
+        padding: 20px 12px;
+    }
+
+    /* Homepage banner */
+    .hero {
+        padding: 30px 15px;
+        margin-bottom: 25px;
+        border-radius: 12px;
+    }
+
+    .hero h2 {
+        font-size: 1.7rem;
+    }
+
+    .hero p {
+        margin-bottom: 20px;
+    }
+
+    /* Stack cards in one column */
+    .featured-books,
+    .offer-grid,
+    .review-grid,
+    .product-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    /* Keep book covers a suitable size */
+    .featured-book img {
+        width: 170px;
+        height: 220px;
+        object-fit: cover;
+    }
+
+    .product-card .product-image {
+        height: 250px;
+    }
+
+    /* Product page heading */
+    .product-page-header {
+        padding: 24px 15px;
+    }
+
+    /* Homepage sections */
+    .section,
+    .offer-section {
+        padding: 24px 14px;
+        margin-bottom: 22px;
+    }
+
+    /* Buttons fit smaller screens */
+    .btn,
+    .hero-button {
+        max-width: 100%;
+        padding: 11px 16px;
+        font-size: 0.85rem;
+        white-space: normal;
+    }
+
+    /* Creator photo */
+    .creator-photo img {
+        width: 160px;
+        height: 160px;
+    }
+
+    /* About page image area */
+    .about-section .about-image {
+        min-height: 220px;
+    }
+
+    /* Google Map */
+    .map iframe {
+        height: 280px;
+    }
+
+    /* Footer */
+    .footer {
+        margin-top: 30px;
+        padding: 22px 12px;
+        align-items: center;
+    }
+  
+}
